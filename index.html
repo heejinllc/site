@@ -45,8 +45,15 @@
     .w-600 { font-weight:600; } /* Semibold */
     
     .soon{
-      position: fixed; top: 6px; left: 8px;
-      font-size: var(--label-size); line-height: 1;
+/*      position: fixed; top: 6px; left: 8px;*/
+      position: fixed;
+      top: 0;        /* zero whitespace above */
+      left: 0;       /* zero whitespace left  */
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      user-select: none;
+      font-size: var(--label-size);
     }
         /* Optional, for more sizes elsewhere */
     .text-2xs { font-size: var(--step--2); line-height: 1; }
