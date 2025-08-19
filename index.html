@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>hee jin's place</title>
 
-  <!-- Adobe Fonts (Plantin Pro) -->
+  <!-- Adobe Fonts kit (Plantin Pro) -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="preconnect" href="https://p.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/acf8vqd.css">
 
   <style>
-    html, body { height: 100%; margin: 0; background: #fff; }
-    body {
-      font-family: "plantin-pro", "Plantin Pro", "Courier New", Courier, monospace;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-    }
-      <style>
+    
     :root{
+      --font-plantin: "plantin-pro", "Plantin Pro", "Courier New", Courier, monospace; /* your default */
+      --font-sans:  "acumin-pro-semi-condensed", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      --font-mono:  "receipt-narrow", "Courier New", Courier, monospace;
+      
       /* Responsive type steps via clamp(min, preferred, max) */
       --step--2: clamp(10px, 0.75rem, 12px);
       --step--1: clamp(12px, 0.90rem, 14px);
@@ -29,6 +28,22 @@
       /* Label size: set to medium */
       --label-size: var(--step-1);
     }
+
+    html, body { height: 100%; margin: 0; background: #fff; }
+    body {
+      /*font-family: "plantin-pro", "Plantin Pro", "Courier New", Courier, monospace;*/
+      font-family: var(--font-plantin); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-plantin { font-family: var(--font-plantin); }
+    .font-sans  { font-family: var(--font-sans);  }
+    .font-mono  { font-family: var(--font-mono);  }
+    
+    .w-300 { font-weight:300; }
+    .w-400 { font-weight:400; } /* Regular */
+    .w-600 { font-weight:600; } /* Semibold */
+    
     .soon{
       position: fixed; top: 6px; left: 8px;
       font-size: var(--label-size); line-height: 1;
