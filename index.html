@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>hee jin was here</title>
-  <link rel="stylesheet" href="styles.css">
+  <!--link rel="stylesheet" href="styles.css"-->
 
   <!-- Adobe Fonts kit (Plantin Pro) -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
@@ -18,16 +18,15 @@
       --font-sans:  "acumin-pro-semi-condensed", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
       --font-mono:  "receipt-narrow", "Courier New", Courier, monospace;
       
-      /* Responsive type steps via clamp(min, preferred, max) */
-      --step--2: clamp(10px, 0.75rem, 12px);
-      --step--1: clamp(12px, 0.90rem, 14px);
-      --step-0 : clamp(14px, 1.00rem, 16px);
-      --step-1 : clamp(18px, calc(1rem + 0.6vw), 20px);   /* ≈ medium */
-      --step-2 : clamp(24px, calc(1.2rem + 1vw), 28px);
-      --step-3 : clamp(32px, calc(1.5rem + 2vw), 40px);
+      --step--2: clamp(0.6875rem, 0.66rem + 0.10vw, 0.75rem);
+      --step--1: clamp(0.8125rem, 0.76rem + 0.20vw, 0.9375rem);
+      --step-0:  clamp(0.9375rem, 0.86rem + 0.30vw, 1.0625rem);
+      --step-1:  clamp(1.125rem, 0.98rem + 0.70vw, 1.375rem);
+      --step-2:  clamp(1.5rem, 1.1rem + 2vw, 2.5rem);
+      --step-3:  clamp(2.5rem, 1.65rem + 4vw, 4.5rem);
+      --step-4:  clamp(4rem, 2rem + 8vw, 8rem);
 
-      /* Label size: set to medium */
-      --label-size: var(--step-1);
+      --gap: clamp(0.75rem, 1.5vw, 1.5rem);
     }
 
     html, body { height: 100%; margin: 0; padding:0; background: #fff; }
@@ -44,7 +43,14 @@
       font-synthesis: none; 
       user-select: none;
     }
+	  
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
+	  
     .font-plantin { font-family: var(--font-plantin); }
     .font-sans  { font-family: var(--font-sans);  }
     .font-mono  { font-family: var(--font-mono);  }
@@ -52,26 +58,57 @@
     .w-300 { font-weight:300; }
     .w-400 { font-weight:400; } /* Regular */
     .w-600 { font-weight:600; } /* Semibold */
+
+	    html {
+      -webkit-text-size-adjust: 100%;
+    }
     
-    .soon{
-/*      position: fixed; top: 6px; left: 8px;*/
-      position: fixed;
-      top: 0;        /* zero whitespace above */
-      left: 0;       /* zero whitespace left  */
+    html, body {
       margin: 0;
       padding: 0;
-      line-height: 1.1;
-      user-select: none;
-      //*font-size: var(--label-size);*/
-      font-size: xxx-large;
+      background: #fff;
     }
-        /* Optional, for more sizes elsewhere */
-    .text-2xs { font-size: var(--step--2); line-height: 1; }
-    .text-xs  { font-size: var(--step--1); line-height: 1.15; }
-    .text-sm  { font-size: var(--step-0);  line-height: 1.3; }
-    .text-md  { font-size: var(--step-1);  line-height: 1.3; }
-    .text-lg  { font-size: var(--step-2);  line-height: 1.2; }
-    .text-xl  { font-size: var(--step-3);  line-height: 1.1; }
+    
+    body {
+      font-family: var(--font-plantin);
+      font-style: normal;
+      font-weight: 400;
+    }
+    
+    .notice,
+    .soon {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding-left: 0.5rem;
+      line-height: 0.95;
+      font-size: var(--step-4);
+      font-synthesis: none;
+      user-select: none;
+    }
+	
+	.text-2xs { font-size: var(--step--2); line-height: 1.1; }
+	.text-xs  { font-size: var(--step--1); line-height: 1.15; }
+	.text-sm  { font-size: var(--step-0);  line-height: 1.25; }
+	.text-md  { font-size: var(--step-1);  line-height: 1.25; }
+	.text-lg  { font-size: var(--step-2);  line-height: 1.15; }
+	.text-xl  { font-size: var(--step-3);  line-height: 1.05; }
+
+
+	/* responsive grid, simple */
+	.gallery {
+	  display: grid;
+	  gap: var(--gap);
+	  grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+	}
+	
+	.gallery img {
+	  display: block;
+	  width: 100%;
+	  height: auto;
+	}
+
   </style>
 </head>
 
