@@ -79,11 +79,15 @@ body {
 			TYPE
 */
 
-.display {
+.display, .notice {
   font-size: var(--step-4);
   line-height: var(--leading-tight);
   max-width: 10ch;
   text-wrap: balance;
+}
+
+.notice {
+	user-select: none;
 }
 
 .title {
